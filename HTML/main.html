@@ -1,0 +1,96 @@
+<h2>Inscripción de Cursos Técnicos</h2>
+
+<form method="POST" action="#">
+
+    <div class="card">
+        <h3>Datos del Estudiante</h3>
+        <div class="row">
+            <div class="field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+            </div>
+            <div class="field">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+            </div>
+        </div>
+        <div class="row">
+            <div class="field" style="max-width:260px">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+507 6000-0000">
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Configuración del Curso</h3>
+        <div class="row">
+            <div class="field">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso">
+                    <option value="">— Seleccionar —</option>
+                    <option value="PHP">PHP — $35/módulo</option>
+                    <option value="Java">Java — $40/módulo</option>
+                    <option value="Redes">Redes — $30/módulo</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="modulos">Módulos</label>
+                <input type="number" id="modulos" name="modulos" min="1" max="12" placeholder="ej. 4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <label>Turno</label>
+                <div class="radio-group">
+                    <input type="radio" name="turno" id="diurno" value="diurno">
+                    <label for="diurno">Diurno</label>
+                    <input type="radio" name="turno" id="nocturno" value="nocturno">
+                    <label for="nocturno">Nocturno</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>Modalidad</label>
+                <div class="radio-group">
+                    <input type="radio" name="modalidad" id="virtual" value="virtual">
+                    <label for="virtual">Virtual</label>
+                    <input type="radio" name="modalidad" id="presencial" value="presencial">
+                    <label for="presencial">Presencial</label>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Precio / módulo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PHP</td>
+                    <td>$35.00</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>$40.00</td>
+                </tr>
+                <tr>
+                    <td>Redes</td>
+                    <td>$30.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">
+            <strong>Descuento 20%</strong> si se toman más de 3 módulos &nbsp;·&nbsp;
+            <strong>ITBMS 7%</strong> sobre toda inscripción
+        </p>
+    </div>
+
+    <div class="btn-row">
+        <button type="submit" class="btn-primary">Inscribirse</button>
+        <button type="reset" class="btn-danger">Limpiar</button>
+    </div>
+
+</form>
