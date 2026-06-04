@@ -20,20 +20,13 @@ session_destroy();  // Destruye los datos de sesión en el servidor
    ══════════════════════════════════════════ */
 
 // Cookie 1: nombre del estudiante
-setcookie(
-    'nombre_estudiante',
-    '',                     // valor vacío
-    time() - 3600,          // fecha en el pasado → el navegador la elimina
-    '/'
-);
+setcookie('nombre_estudiante', '', time() - 3600, '/');
 
-// Cookie 2: curso favorito
-setcookie(
-    'curso_favorito',
-    '',
-    time() - 3600,
-    '/'
-);
+// Cookie 2: correo electrónico
+setcookie('correo_estudiante', '', time() - 3600, '/');
+
+// Cookie 3: teléfono del estudiante
+setcookie('telefono_estudiante', '', time() - 3600, '/');
 
 /* ══════════════════════════════════════════
    3. REDIRECCIÓN AL FORMULARIO PRINCIPAL

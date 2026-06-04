@@ -14,12 +14,16 @@ require 'includes/regreso.php';
                 <input type="text" id="nombre" name="nombre"
                        pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)+$"
                        title="Por favor, ingresa tu Nombre y Apellido (solo letras y un espacio entre ellos)."
-                       placeholder="Ej. María López" required>
+                       placeholder="Ej. María López" 
+                       value="<?php echo isset($_COOKIE['nombre_estudiante']) ? htmlspecialchars($_COOKIE['nombre_estudiante']) : ''; ?>" 
+                       required>
             </div>
             <div class="field">
                 <label for="correo">Correo electrónico</label>
                 <input type="email" id="correo" name="correo"
-                       placeholder="correo@ejemplo.com" required>
+                       placeholder="correo@ejemplo.com" 
+                       value="<?php echo isset($_COOKIE['correo_estudiante']) ? htmlspecialchars($_COOKIE['correo_estudiante']) : ''; ?>" 
+                       required>
             </div>
         </div>
         <div class="row">
@@ -28,7 +32,9 @@ require 'includes/regreso.php';
                 <input type="tel" id="telefono" name="telefono"
                        pattern="^[0-9]{4}-[0-9]{4}$"
                        title="El formato debe ser de 8 números con un guion. Ejemplo: 6000-0000"
-                       placeholder="6000-0000" required>
+                       placeholder="6000-0000" 
+                       value="<?php echo isset($_COOKIE['telefono_estudiante']) ? htmlspecialchars($_COOKIE['telefono_estudiante']) : ''; ?>" 
+                       required>
             </div>
         </div>
     </div>

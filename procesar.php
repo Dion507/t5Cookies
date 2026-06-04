@@ -124,20 +124,23 @@ try {
         "total"         => $total_raw
     ];
 
-    /* ══════════════════════════════════════════
-       4. PERSISTENCIA: COOKIES Y SESIONES PASO A PASO
-       ══════════════════════════════════════════ */
-    $datosCookie = [
-        'nombre_estudiante' => $estudiante['nombre'],
-        'curso_favorito'    => $inscripcion['curso']
-    ];
+ /* ══════════════════════════════════════════
+   4. PERSISTENCIA: COOKIES Y SESIONES PASO A PASO
+   ══════════════════════════════════════════ */
+$datosCookie = [
+    'nombre_estudiante'   => $estudiante['nombre'],
+    'correo_estudiante'   => $estudiante['correo'],
+    'telefono_estudiante' => $estudiante['telefono']
+];
 
-    $clavesCookies = array_keys($datosCookie);
-    for ($i = 0; $i < count($clavesCookies); $i++) {
-        $nombreCookie = $clavesCookies[$i];
-        $valorCookie  = $datosCookie[$nombreCookie];
-        setcookie($nombreCookie, $valorCookie, time() + 3600, '/');
-    }
+$clavesCookies = array_keys($datosCookie);
+for ($i = 0; $i < count($clavesCookies); $i++) {
+    $nombreCookie = $clavesCookies[$i];
+    $valorCookie  = $datosCookie[$nombreCookie];
+    
+    // Guarda dinámicamente solo las 3 cookies personales en el navegador por 1 hora
+    setcookie($nombreCookie, $valorCookie, time() + 3600, '/');
+}
 
     $_SESSION["datos"] = [
         "estudiante"  => [],
