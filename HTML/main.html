@@ -1,17 +1,8 @@
-<?php
-/**
- * main.html (incluido por index.php)
- * Contiene el formulario de inscripción y la tabla de cursos.
- * Se usa $cursos (incluido desde includes/cursos.php vía index.php).
- */
-?>
-
 <h2>Formulario de Inscripción <span class="sub">Completa todos los campos</span></h2>
 
 <?php
 require 'includes/regreso.php';
 ?>
-
 
 <form method="POST" action="procesar.php">
 
@@ -21,6 +12,8 @@ require 'includes/regreso.php';
             <div class="field">
                 <label for="nombre">Nombre completo</label>
                 <input type="text" id="nombre" name="nombre"
+                       pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)+$"
+                       title="Por favor, ingresa tu Nombre y Apellido (solo letras y un espacio entre ellos)."
                        placeholder="Ej. María López" required>
             </div>
             <div class="field">
@@ -33,7 +26,9 @@ require 'includes/regreso.php';
             <div class="field" style="max-width:260px">
                 <label for="telefono">Teléfono</label>
                 <input type="tel" id="telefono" name="telefono"
-                       placeholder="+507 6000-0000" required>
+                       pattern="^[0-9]{4}-[0-9]{4}$"
+                       title="El formato debe ser de 8 números con un guion. Ejemplo: 6000-0000"
+                       placeholder="6000-0000" required>
             </div>
         </div>
     </div>
