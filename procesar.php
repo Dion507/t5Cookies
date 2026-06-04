@@ -64,14 +64,25 @@ try {
     }
 
     // Validación de Correo: Soporta cualquier dominio y estructura estándar @
-    if (!filter_var($estudiante['correo'], FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('El correo electrónico no tiene un formato válido.');
-    }
+  // 1. Validación de estructura estándar (Soporta cualquier @ estándar)
+if (!filter_var($estudiante['correo'], FILTER_VALIDATE_EMAIL)) {
+    throw new Exception('El correo electrónico no tiene un formato válido.');
+}
 
-    // Validación de Teléfono: Formato estricto numérico ####-####
-    if (!preg_match('/^[0-9]{4}-[0-9]{4}$/', $estudiante['telefono'])) {
-        throw new Exception('El formato de teléfono debe ser estrictamente de 8 números con un guion (Ej. 6000-0000).');
-    }
+// 2. Validación de Dominio Existente (Verifica registros DNS reales)
+// Extraemos el dominio del correo (lo que va después del @)
+$partesCorreo = explode('@', $estudiante['correo']);
+$dominio = array_pop($partesCorreo);
+
+// checkdnsrr busca si el dominio tiene servidores de correo activos (registros MX)
+if (!checkdnsrr($dominio, 'MX')) {
+    throw new Exception("El dominio '@$dominio' no existe o no puede recibir correos electrónicos.");
+}
+
+    // Validación de Teléfono: Formato de Panamá (8 dígitos), acepta con o sin guion (Ej: 6000-0000 o 60000000)
+if (!preg_match('/^[0-9]{4}-?[0-9]{4}$/', $estudiante['telefono'])) {
+    throw new Exception('El formato de teléfono debe ser válido para Panamá (8 números, ej. 6000-0000 o 60000000).');
+}
 
     // Validación de Módulos
     if ($inscripcion['modulos'] < 1 || $inscripcion['modulos'] > 12) {
