@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * main.html (incluido por index.php)
@@ -19,10 +20,17 @@
 <form method="POST" action="procesar.php">
 
     <!-- ── Datos del Estudiante ── -->
+=======
+<h2>Inscripción de Cursos Técnicos</h2>
+
+<form method="POST" action="#">
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     <div class="card">
         <h3>Datos del Estudiante</h3>
         <div class="row">
             <div class="field">
+<<<<<<< HEAD
                 <label for="nombre">Nombre completo</label>
                 <input type="text" id="nombre" name="nombre"
                        placeholder="Ej. María López" required>
@@ -31,23 +39,39 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="email" id="correo" name="correo"
                        placeholder="correo@ejemplo.com" required>
+=======
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+            </div>
+            <div class="field">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
             </div>
         </div>
         <div class="row">
             <div class="field" style="max-width:260px">
                 <label for="telefono">Teléfono</label>
+<<<<<<< HEAD
                 <input type="tel" id="telefono" name="telefono"
                        placeholder="+507 6000-0000" required>
+=======
+                <input type="tel" id="telefono" name="telefono" placeholder="+507 6000-0000">
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
             </div>
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- ── Configuración del Curso ── -->
+=======
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     <div class="card">
         <h3>Configuración del Curso</h3>
         <div class="row">
             <div class="field">
                 <label for="curso">Curso</label>
+<<<<<<< HEAD
                 <select id="curso" name="curso" required>
                     <option value="">— Seleccionar —</option>
                     <?php foreach ($cursos as $nombre => $precio): ?>
@@ -61,30 +85,59 @@
                 <label for="modulos">Cantidad de módulos</label>
                 <input type="number" id="modulos" name="modulos"
                        min="1" max="12" placeholder="Ej. 4" required>
+=======
+                <select id="curso" name="curso">
+                    <option value="">— Seleccionar —</option>
+                    <option value="PHP">PHP — $35/módulo</option>
+                    <option value="Java">Java — $40/módulo</option>
+                    <option value="Redes">Redes — $30/módulo</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="modulos">Módulos</label>
+                <input type="number" id="modulos" name="modulos" min="1" max="12" placeholder="ej. 4">
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
             </div>
         </div>
         <div class="row">
             <div class="field">
                 <label>Turno</label>
                 <div class="radio-group">
+<<<<<<< HEAD
                     <input type="radio" name="turno" id="diurno" value="Diurno" required>
                     <label for="diurno">☀️ Diurno</label>
                     <input type="radio" name="turno" id="nocturno" value="Nocturno">
                     <label for="nocturno">🌙 Nocturno</label>
+=======
+                    <input type="radio" name="turno" id="diurno" value="diurno">
+                    <label for="diurno">Diurno</label>
+                    <input type="radio" name="turno" id="nocturno" value="nocturno">
+                    <label for="nocturno">Nocturno</label>
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
                 </div>
             </div>
             <div class="field">
                 <label>Modalidad</label>
                 <div class="radio-group">
+<<<<<<< HEAD
                     <input type="radio" name="modalidad" id="virtual" value="Virtual" required>
                     <label for="virtual">💻 Virtual</label>
                     <input type="radio" name="modalidad" id="presencial" value="Presencial">
                     <label for="presencial">🏫 Presencial</label>
+=======
+                    <input type="radio" name="modalidad" id="virtual" value="virtual">
+                    <label for="virtual">Virtual</label>
+                    <input type="radio" name="modalidad" id="presencial" value="presencial">
+                    <label for="presencial">Presencial</label>
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
                 </div>
             </div>
         </div>
 
+<<<<<<< HEAD
         <!-- Tabla de precios generada dinámicamente desde $cursos -->
+=======
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
         <table>
             <thead>
                 <tr>
@@ -93,6 +146,7 @@
                 </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
                 <?php foreach ($cursos as $nombre => $precio): ?>
                     <tr>
                         <td><?= $nombre ?></td>
@@ -115,3 +169,31 @@
     </div>
 
 </form>
+=======
+                <tr>
+                    <td>PHP</td>
+                    <td>$35.00</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>$40.00</td>
+                </tr>
+                <tr>
+                    <td>Redes</td>
+                    <td>$30.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">
+            <strong>Descuento 20%</strong> si se toman más de 3 módulos &nbsp;·&nbsp;
+            <strong>ITBMS 7%</strong> sobre toda inscripción
+        </p>
+    </div>
+
+    <div class="btn-row">
+        <button type="submit" class="btn-primary">Inscribirse</button>
+        <button type="reset" class="btn-danger">Limpiar</button>
+    </div>
+
+</form>
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0

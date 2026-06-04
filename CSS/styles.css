@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 /* ============================================================
    estilos.css  –  T5 Cookies · Inscripción de Cursos Técnicos
    ============================================================ */
 
 /* ── Reset básico ── */
 *, *::before, *::after {
+=======
+* {
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+<<<<<<< HEAD
 /* ── Base ── */
 body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -81,19 +86,61 @@ h2 .sub {
     text-transform: uppercase;
     letter-spacing: 0.09em;
     color: #aaa;
+=======
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    padding: 2rem 1rem;
+}
+
+main {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #dde0e8;
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.card h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #999;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #eee;
 }
 
+<<<<<<< HEAD
 /* ── Filas de campos ── */
+=======
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 .row {
     display: flex;
     gap: 1rem;
     margin-bottom: 0.9rem;
 }
 
+<<<<<<< HEAD
 .row:last-child { margin-bottom: 0; }
+=======
+.row:last-child {
+    margin-bottom: 0;
+}
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 
 .field {
     flex: 1;
@@ -108,34 +155,53 @@ label {
     color: #444;
 }
 
+<<<<<<< HEAD
 /* ── Inputs & selects ── */
+=======
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 input,
 select {
     padding: 0.55rem 0.75rem;
     border: 1px solid #dde0e8;
+<<<<<<< HEAD
     border-radius: 6px;
+=======
+    border-radius: 5px;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     font-size: 0.88rem;
     font-family: inherit;
     color: #1a1a2e;
     background: #fafafa;
     outline: none;
+<<<<<<< HEAD
     transition: border-color .15s, background .15s;
+=======
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 }
 
 input:focus,
 select:focus {
     border-color: #4a6cf7;
     background: #fff;
+<<<<<<< HEAD
     box-shadow: 0 0 0 3px rgba(74,108,247,0.1);
 }
 
 /* ── Radio buttons con diseño de botón ── */
+=======
+}
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 .radio-group {
     display: flex;
     gap: 0.5rem;
 }
 
+<<<<<<< HEAD
 .radio-group input[type="radio"] {
+=======
+.radio-group input {
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     display: none;
 }
 
@@ -144,12 +210,17 @@ select:focus {
     text-align: center;
     padding: 0.5rem;
     border: 1px solid #dde0e8;
+<<<<<<< HEAD
     border-radius: 6px;
+=======
+    border-radius: 5px;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     cursor: pointer;
     font-size: 0.82rem;
     font-weight: 400;
     color: #666;
     background: #fafafa;
+<<<<<<< HEAD
     transition: all .15s;
 }
 
@@ -161,6 +232,17 @@ select:focus {
 }
 
 /* ── Tabla de cursos ── */
+=======
+}
+
+.radio-group input:checked+label {
+    border-color: #4a6cf7;
+    background: #eef1ff;
+    color: #4a6cf7;
+    font-weight: 500;
+}
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 table {
     width: 100%;
     border-collapse: collapse;
@@ -170,17 +252,29 @@ table {
 
 th {
     text-align: left;
+<<<<<<< HEAD
     padding: 0.45rem 0.65rem;
     background: #f4f5f7;
     font-size: 0.72rem;
     color: #888;
     font-weight: 600;
+=======
+    padding: 0.4rem 0.6rem;
+    background: #f4f5f7;
+    font-size: 0.72rem;
+    color: #888;
+    font-weight: 500;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
 td {
+<<<<<<< HEAD
     padding: 0.55rem 0.65rem;
+=======
+    padding: 0.5rem 0.6rem;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -188,6 +282,7 @@ tr:last-child td {
     border-bottom: none;
 }
 
+<<<<<<< HEAD
 td.precio {
     font-weight: 600;
     color: #4a6cf7;
@@ -204,20 +299,41 @@ td.precio {
 .note strong { color: #4a6cf7; }
 
 /* ── Botones ── */
+=======
+.note {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 0.7rem;
+    line-height: 1.6;
+}
+
+.note strong {
+    color: #4a6cf7;
+}
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 .btn-row {
     display: flex;
     gap: 0.7rem;
     margin-top: 0.5rem;
 }
 
+<<<<<<< HEAD
 button, .btn {
     padding: 0.65rem 1.6rem;
     border: none;
     border-radius: 6px;
+=======
+button {
+    padding: 0.65rem 1.6rem;
+    border: none;
+    border-radius: 5px;
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
     font-family: inherit;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
+<<<<<<< HEAD
     text-decoration: none;
     display: inline-block;
     transition: background .15s, transform .1s;
@@ -225,12 +341,17 @@ button, .btn {
 
 button:active, .btn:active { transform: scale(0.98); }
 
+=======
+}
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 .btn-primary {
     background: #4a6cf7;
     color: #fff;
     flex: 1;
 }
 
+<<<<<<< HEAD
 .btn-primary:hover { background: #3a5ce0; }
 
 .btn-secondary {
@@ -241,12 +362,19 @@ button:active, .btn:active { transform: scale(0.98); }
 
 .btn-secondary:hover { background: #e8eaf0; }
 
+=======
+.btn-primary:hover {
+    background: #3a5ce0;
+}
+
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
 .btn-danger {
     background: #fff;
     color: #e74c3c;
     border: 1px solid #e74c3c;
 }
 
+<<<<<<< HEAD
 .btn-danger:hover { background: #fdf0f0; }
 
 /* ── Factura ── */
@@ -369,3 +497,14 @@ button:active, .btn:active { transform: scale(0.98); }
     header h1     { font-size: 1.05rem; }
     .factura-total .value-f { font-size: 1rem; }
 }
+=======
+.btn-danger:hover {
+    background: #fdf0f0;
+}
+
+@media (max-width: 520px) {
+    .row {
+        flex-direction: column;
+    }
+}
+>>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0
