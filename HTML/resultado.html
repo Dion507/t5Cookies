@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura de Inscripción - Estructuras For/Foreach</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .factura-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eee; }
+        .factura-total { display: flex; justify-content: space-between; padding: 15px 0; font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+        .divider { border-bottom: 2px solid #ccc; margin: 10px 0; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #34495e; color: white; }
+        .btn-row { margin-top: 20px; }
+        .btn { padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-right: 10px; }
+        .btn-secondary { background: #7f8c8d; color: white; }
+        .btn-danger { background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+
+<?php include './HTML/nav.html'; ?>
+
+<main>
+    <h2>✅ Inscripción Procesada mediante Iteración Manual de Arrays</h2>
+
+    <div class="card">
+        <h3>📄 Factura Generada de $_SESSION</h3>
+        
+        <div class="factura-row">
+            <span><strong>Estudiante:</strong></span>
+            <span><?= $_SESSION["datos"]["estudiante"]["nombre"] ?></span>
+        </div>
+        <div class="factura-row">
+            <span><strong>Curso Inscrito:</strong></span>
+            <span><?= $_SESSION["datos"]["inscripcion"]["curso"] ?></span>
+        </div>
+        <div class="factura-row">
+            <span><strong>Modalidad / Turno:</strong></span>
+            <span><?= $_SESSION["datos"]["inscripcion"]["modalidad"] ?> (<?= $_SESSION["datos"]["inscripcion"]["turno"] ?>)</span>
+        </div>
+        <div class="factura-row">
+            <span><strong>Módulos Solicitados:</strong></span>
+            <span><?= $_SESSION["datos"]["inscripcion"]["modulos"] ?></span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="factura-row">
+            <span>Subtotal:</span>
+            <span>$<?= $_SESSION["datos"]["factura"]["subtotal"] ?></span>
+        </div>
+        <div class="factura-row">
+            <span>Descuento Aplicado:</span>
+            <span style="color: #27ae60;">- $<?= $_SESSION["datos"]["factura"]["descuento"] ?></span>
+        </div>
+        <div class="factura-row">
+            <span>ITBMS (7%):</span>
+            <span>+ $<?= $_SESSION["datos"]["factura"]["itbms"] ?></span>
+        </div>
+
+        <div class="factura-total">
+            <span>TOTAL A PAGAR:</span>
+            <span>$<?= $_SESSION["datos"]["factura"]["total"] ?></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>🧪 Evidencia Técnica: Inspección e Impresión de Estructuras</h3>
+        
+        <p><strong>1. Recorrido del Array Maestro $cursos (Estructura de Precios):</strong></p>
+        <pre><?php print_r($cursos); ?></pre>
+
+        <p><strong>2. Contenido del Array Local $estudiante (Llenado con FOR):</strong></p>
+        <pre><?php print_r($estudiante); ?></pre>
+
+        <p><strong>3. Contenido Total de la Variable Global $_SESSION["datos"]:</strong></p>
+        <pre><?php print_r($_SESSION["datos"]); ?></pre>
+
+        <p><strong>4. Simulación de lectura de Cookies mediante ciclo en $_COOKIE:</strong></p>
+        <pre><?php 
+            foreach ($_COOKIE as $key => $value) {
+                if ($key == 'nombre_estudiante' || $key == 'curso_favorito') {
+                    echo "Clave Cookie: [" . $key . "] => Valor: " . $value . "\n";
+                }
+            }
+        ?></pre>
+    </div>
+
+    <div class="btn-row">
+        <a href="index.php" class="btn btn-secondary">← Nueva inscripción</a>
+        <a href="destruir.php" class="btn btn-danger">🗑️ Destruir Sesión y Cookies</a>
+    </div>
+</main>
+
+<?php include './HTML/footer.html'; ?>
+
+</body>
+</html>

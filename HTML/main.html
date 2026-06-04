@@ -1,0 +1,117 @@
+<?php
+/**
+ * main.html (incluido por index.php)
+ * Contiene el formulario de inscripción y la tabla de cursos.
+ * Se usa $cursos (incluido desde includes/cursos.php vía index.php).
+ */
+?>
+
+<h2>Formulario de Inscripción <span class="sub">Completa todos los campos</span></h2>
+
+<!-- ── Mensaje de bienvenida si hay cookie con el nombre ── -->
+<?php if (!empty($_COOKIE['nombre_estudiante'])): ?>
+    <div class="alerta alerta-ok">
+        👋 Bienvenido de nuevo, <strong><?= htmlspecialchars($_COOKIE['nombre_estudiante']) ?></strong>.
+        Tu curso favorito registrado: <strong><?= htmlspecialchars($_COOKIE['curso_favorito'] ?? '—') ?></strong>
+    </div>
+<?php endif; ?>
+
+<form method="POST" action="procesar.php">
+
+    <!-- ── Datos del Estudiante ── -->
+    <div class="card">
+        <h3>Datos del Estudiante</h3>
+        <div class="row">
+            <div class="field">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre"
+                       placeholder="Ej. María López" required>
+            </div>
+            <div class="field">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo"
+                       placeholder="correo@ejemplo.com" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field" style="max-width:260px">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono"
+                       placeholder="+507 6000-0000" required>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Configuración del Curso ── -->
+    <div class="card">
+        <h3>Configuración del Curso</h3>
+        <div class="row">
+            <div class="field">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" required>
+                    <option value="">— Seleccionar —</option>
+                    <?php foreach ($cursos as $nombre => $precio): ?>
+                        <option value="<?= $nombre ?>">
+                            <?= $nombre ?> — $<?= number_format($precio, 2) ?>/módulo
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="field">
+                <label for="modulos">Cantidad de módulos</label>
+                <input type="number" id="modulos" name="modulos"
+                       min="1" max="12" placeholder="Ej. 4" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <label>Turno</label>
+                <div class="radio-group">
+                    <input type="radio" name="turno" id="diurno" value="Diurno" required>
+                    <label for="diurno">☀️ Diurno</label>
+                    <input type="radio" name="turno" id="nocturno" value="Nocturno">
+                    <label for="nocturno">🌙 Nocturno</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>Modalidad</label>
+                <div class="radio-group">
+                    <input type="radio" name="modalidad" id="virtual" value="Virtual" required>
+                    <label for="virtual">💻 Virtual</label>
+                    <input type="radio" name="modalidad" id="presencial" value="Presencial">
+                    <label for="presencial">🏫 Presencial</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de precios generada dinámicamente desde $cursos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Precio / módulo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cursos as $nombre => $precio): ?>
+                    <tr>
+                        <td><?= $nombre ?></td>
+                        <td class="precio">$<?= number_format($precio, 2) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <p class="note">
+            <strong>Descuento 20%</strong> si tomas más de 3 módulos &nbsp;·&nbsp;
+            <strong>ITBMS 7%</strong> aplica sobre toda inscripción
+        </p>
+    </div>
+
+    <!-- ── Botones ── -->
+    <div class="btn-row">
+        <button type="submit" class="btn-primary">✅ Inscribirse</button>
+        <button type="reset"  class="btn-danger">✖ Limpiar</button>
+    </div>
+
+</form>

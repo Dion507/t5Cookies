@@ -1,0 +1,371 @@
+/* ============================================================
+   estilos.css  –  T5 Cookies · Inscripción de Cursos Técnicos
+   ============================================================ */
+
+/* ── Reset básico ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Base ── */
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    padding: 2rem 1rem 4rem;
+    line-height: 1.5;
+}
+
+/* ── Encabezado ── */
+header {
+    background: linear-gradient(135deg, #4a6cf7 0%, #2e4dd4 100%);
+    color: #fff;
+    padding: 1.2rem 2rem;
+    border-radius: 10px;
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+header span.badge {
+    background: rgba(255,255,255,0.18);
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+/* ── Contenedor principal ── */
+main {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ── Títulos de sección ── */
+h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+    color: #1a1a2e;
+}
+
+h2 .sub {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #888;
+    margin-left: 0.5rem;
+}
+
+/* ── Tarjeta (card) ── */
+.card {
+    background: #fff;
+    border: 1px solid #dde0e8;
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #aaa;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* ── Filas de campos ── */
+.row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.row:last-child { margin-bottom: 0; }
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* ── Inputs & selects ── */
+input,
+select {
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #dde0e8;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-family: inherit;
+    color: #1a1a2e;
+    background: #fafafa;
+    outline: none;
+    transition: border-color .15s, background .15s;
+}
+
+input:focus,
+select:focus {
+    border-color: #4a6cf7;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(74,108,247,0.1);
+}
+
+/* ── Radio buttons con diseño de botón ── */
+.radio-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #dde0e8;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #666;
+    background: #fafafa;
+    transition: all .15s;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    border-color: #4a6cf7;
+    background: #eef1ff;
+    color: #4a6cf7;
+    font-weight: 600;
+}
+
+/* ── Tabla de cursos ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+}
+
+th {
+    text-align: left;
+    padding: 0.45rem 0.65rem;
+    background: #f4f5f7;
+    font-size: 0.72rem;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td.precio {
+    font-weight: 600;
+    color: #4a6cf7;
+}
+
+/* ── Nota informativa ── */
+.note {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 0.75rem;
+    line-height: 1.6;
+}
+
+.note strong { color: #4a6cf7; }
+
+/* ── Botones ── */
+.btn-row {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+button, .btn {
+    padding: 0.65rem 1.6rem;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background .15s, transform .1s;
+}
+
+button:active, .btn:active { transform: scale(0.98); }
+
+.btn-primary {
+    background: #4a6cf7;
+    color: #fff;
+    flex: 1;
+}
+
+.btn-primary:hover { background: #3a5ce0; }
+
+.btn-secondary {
+    background: #f4f5f7;
+    color: #444;
+    border: 1px solid #dde0e8;
+}
+
+.btn-secondary:hover { background: #e8eaf0; }
+
+.btn-danger {
+    background: #fff;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.btn-danger:hover { background: #fdf0f0; }
+
+/* ── Factura ── */
+.factura {
+    border-top: 3px solid #4a6cf7;
+}
+
+.factura-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f4f5f7;
+    font-size: 0.88rem;
+}
+
+.factura-row:last-child { border-bottom: none; }
+
+.factura-row .label-f { color: #666; }
+
+.factura-row .value-f {
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.factura-total {
+    background: #f0f4ff;
+    border-radius: 7px;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+
+.factura-total .label-f {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.factura-total .value-f {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #4a6cf7;
+}
+
+/* ── Info cookies / sesión ── */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid #dde0e8;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.info-card h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #aaa;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item {
+    margin-bottom: 0.55rem;
+}
+
+.info-item .key {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.1rem;
+}
+
+.info-item .val {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* ── Alerta / mensaje de error ── */
+.alerta {
+    background: #fff4f4;
+    border: 1px solid #f5c6c6;
+    border-left: 4px solid #e74c3c;
+    color: #a00;
+    padding: 0.8rem 1rem;
+    border-radius: 7px;
+    font-size: 0.87rem;
+    margin-bottom: 1.2rem;
+}
+
+.alerta-ok {
+    background: #f0fff4;
+    border: 1px solid #b2dfdb;
+    border-left: 4px solid #27ae60;
+    color: #1a6b3a;
+}
+
+/* ── Divider ── */
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 1rem 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+    .row          { flex-direction: column; }
+    .info-grid    { grid-template-columns: 1fr; }
+    header h1     { font-size: 1.05rem; }
+    .factura-total .value-f { font-size: 1rem; }
+}
