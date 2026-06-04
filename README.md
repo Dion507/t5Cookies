@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # T5 – Cookies & Sesiones · Inscripción de Cursos Técnicos
 
 ## Estructura del proyecto
@@ -34,6 +33,4 @@ t5Cookies/
 1. `index.php` → muestra el formulario
 2. Al enviar → `procesar.php` valida, guarda cookies y sesión, muestra factura
 3. Botón "Cerrar Sesión y Borrar Cookies" → `destruir.php` limpia todo y redirige
-=======
 # t5Cookies
->>>>>>> d7ba088c367f64d6645df90d6b3fcc802162f7d0

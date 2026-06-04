@@ -94,7 +94,7 @@ $total_raw     = $subtotal_raw - $descuento_raw + $itbms_raw;
 
 $factura = [
     "precio_modulo" => $precio_modulo,
-    "subtotal"      =>> $subtotal_raw,
+    "subtotal"      => $subtotal_raw,
     "descuento"     => $descuento_raw,
     "itbms"         => $itbms_raw,
     "total"         => $total_raw
@@ -132,6 +132,6 @@ foreach ($factura as $clave => $valor) {
 }
 
 // ══════════════════════════════════════════
-// 5. INCLUSIÓN DE LA VISTA DE RESULTADO (NUEVA)
+// 5. INCLUSIÓN DE LA VISTA DE RESULTADO
 // ══════════════════════════════════════════
 include './HTML/resultado.html';
